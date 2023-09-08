@@ -1,6 +1,12 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { configDark } from "@/components/configDark";
+import { Html, Head, Main, NextScript } from "next/document";
+import { useEffect } from "react";
 
 export default function Document() {
+  useEffect(() => {
+    configDark();
+  }, []);
+
   return (
     <Html lang="en">
       <Head />
@@ -9,5 +15,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }
