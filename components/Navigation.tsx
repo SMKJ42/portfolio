@@ -2,7 +2,7 @@ import { ThemeIcons } from "./themeIcon";
 
 export default function Navigation() {
   return (
-    <nav className="bg-teal-500 p-6 w-full">
+    <nav className="bg-teal-500 p-6 w-full text-white">
       <ul className="flex items-center justify-between">
         <li className="hover:underline">
           <a href="#About_Me">About Me</a>
