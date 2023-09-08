@@ -1,15 +1,14 @@
-import { configDark } from "@/components/configDark";
+import Navigation from "@/components/Navigation";
 import { Html, Head, Main, NextScript } from "next/document";
-import { useEffect } from "react";
+import Script from "next/script";
+import { useEffect, useState } from "react";
 
 export default function Document() {
-  useEffect(() => {
-    configDark();
-  }, []);
-
   return (
     <Html lang="en">
-      <Head />
+      <Head>
+        <Script src="../public/theme.ts" strategy="beforeInteractive" />
+      </Head>
       <body>
         <Main />
         <NextScript />
