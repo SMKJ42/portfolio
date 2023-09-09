@@ -4,6 +4,8 @@ import Navigation from "@/components/Navigation";
 import Image from "next/image";
 
 import diveImg from "/public/diving.JPG";
+import Link from "next/link";
+import { SocialIcon } from "react-social-icons";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +33,7 @@ export default function Home() {
         <p className="text-xl text-center">
           Hi! My names William, but you can call me Liam.
         </p>
+        <a>Resume</a>
         <br />
         <p className="text-xl text-center">
           I&#8217;m a software engineer whose mainly focused on front-end
@@ -44,7 +47,36 @@ export default function Home() {
         </p>
         <p className="text-xl text-center"></p>
       </section>
-      {/* <div className="h-64"></div> */}
+      <section className="grid grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-6 p-4">
+        <Link
+          href="https://www.linkedin.com/in/williamdeason1"
+          target="_blank"
+          // className="w-full flex items-center justify-center"
+        >
+          <SocialIcon network="linkedin" />
+        </Link>
+        <Link
+          href="https://www.instagram.com/liam.deason/"
+          target="_blank"
+          // className="w-full flex items-center justify-center"
+        >
+          <SocialIcon network="instagram" />
+        </Link>
+        <Link
+          href="https://github.com/SMKJ42"
+          target="_blank"
+          // className="w-full flex items-center justify-center"
+        >
+          <SocialIcon network="github" />
+        </Link>
+        <Link
+          href="https://leetcode.com/SMKJ42/"
+          target="_blank"
+          // className="w-full flex items-center justify-center"
+        >
+          <SocialIcon network="leetcode" />
+        </Link>
+      </section>
       <section
         id="Experience"
         className="flex flex-col items-center justify-center"
@@ -80,7 +112,6 @@ export default function Home() {
           </li>
         </ul>
       </section>
-      {/* <div className="h-64"></div> */}
       <section
         id="Projects"
         className="flex flex-col items-center justify-center"
@@ -88,13 +119,21 @@ export default function Home() {
         <h1 className="text-4xl font-bold">Projects</h1>
         <p className="text-xl">I&#8217;m a software engineer</p>
       </section>
-      {/* <div className="h-64"></div> */}
+
       <section
         id="Get_In_Touch"
         className="flex flex-col items-center justify-center"
       >
         <h1 className="text-4xl font-bold">Get in Touch</h1>
-        <p className="text-xl">I&#8217;m a software engineer</p>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <input />
+          <textarea />
+          <button>Submit</button>
+        </form>
       </section>
     </main>
   );
