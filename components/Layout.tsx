@@ -1,10 +1,15 @@
+import { Inter } from "next/font/google";
 import { ThemeIcons } from "./themeIcon";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export function Layout(Props: { children: React.ReactNode }) {
   const { children } = Props;
   return (
-    <main>
-      <nav className="bg-teal-500 p-6 w-full text-white">
+    <div
+      className={`min-h-screen ${inter.className} bg-white dark:bg-black text-black dark:text-white transition-colors duration-500`}
+    >
+      <nav className="bg-teal-500 py-2 pl-8 pr-6 w-full text-white fixed">
         <ul className="flex items-center justify-between">
           <li className="hover:underline">
             <a href="#About_Me">About Me</a>
@@ -23,8 +28,10 @@ export function Layout(Props: { children: React.ReactNode }) {
           </button>
         </ul>
       </nav>
-      {children}
+      <main className="pt-[70px] flex flex-col items-center justify-between">
+        {children}
+      </main>
       <footer></footer>
-    </main>
+    </div>
   );
 }

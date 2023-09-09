@@ -6,7 +6,6 @@ import { Socials } from "@/components/main/socials";
 import { About } from "@/components/main/about";
 import { Experience } from "@/components/main/experience";
 import { Projects } from "@/components/main/projects";
-import { Contact } from "@/components/main/contact";
 
 import diveImg from "/public/diving.JPG";
 import { Layout } from "@/components/Layout";
@@ -30,23 +29,31 @@ const Home: NextPageWithLayout = () => {
   }, []);
 
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between ${inter.className} bg-white dark:bg-black text-black dark:text-white transition-colors duration-500`}
-    >
-      <p>INSERT IMAGE HERE</p>
-      <About />
+    <>
+      <p>**INSERT IMAGE HERE**</p>
+      <div className="mt-8">
+        <About />
+      </div>
+      <div className="mt-12">
+        <Socials />
+      </div>
       <Image
         src={diveImg}
         alt=""
         width={150}
         height={150}
-        className="rounded-xl mt-8"
+        className="rounded-xl mt-12"
       />
-      <Socials />
-      <Experience />
-      <Projects />
-      <Contact />
-    </main>
+      <div className="mt-12">
+        <Experience />
+      </div>
+      <div className="mt-12">
+        <Projects />
+      </div>
+      {/* <div className="mt-8">
+        <Contact />
+      </div> */}
+    </>
   );
 };
 
