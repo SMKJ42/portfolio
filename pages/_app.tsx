@@ -1,19 +1,25 @@
+import { AppStore } from "@/lib/AppReducer";
 import "@/styles/globals.css";
+import { NextPage } from "next";
 import type { AppProps } from "next/app";
-import { useEffect } from "react";
+import { ReactElement, ReactNode, createContext } from "react";
 
-export default function App({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    var theme = localStorage.getItem("color-theme");
-    if (theme === "dark") {
-      const html = document.querySelector("html")!;
-      html.classList.add("dark");
-    }
-  }, []);
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+export const AppContext = createContext<any>(null);
+
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout || ((page) => page);
 
   return (
-    <>
-      <Component {...pageProps} />
-    </>
+    <AppContext.Provider value={AppStore()}>
+      {getLayout(<Component {...pageProps} />)}
+    </AppContext.Provider>
   );
 }

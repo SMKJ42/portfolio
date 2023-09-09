@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from "react";
+import { AppContext } from "@/pages/_app";
+import React, { useContext, useEffect, useState } from "react";
 
 export function ThemeIcons() {
-  const [theme, setTheme] = useState("light");
+  const { state, dispatch } = useContext(AppContext);
 
-  useEffect(() => {
-    if (localStorage.getItem("color-theme") === "dark") {
-      setTheme("dark");
+  const theme = state.theme;
+
+  function setTheme(type: "light" | "dark") {
+    if (theme === "light") {
+      dispatch({ type: "SET_THEME", payload: type });
     } else {
-      setTheme("light");
+      dispatch({ type: "SET_THEME", payload: type });
     }
-  }, []);
+  }
 
   return (
     <>
