@@ -7,7 +7,7 @@ import { About } from "@/components/main/about";
 import { Experience } from "@/components/main/experience";
 import { Projects } from "@/components/main/projects";
 
-import diveImg from "/public/diving.JPG";
+import * as img from "/public/diving.jpg";
 import { Layout } from "@/components/Layout";
 import { AppContext, NextPageWithLayout } from "./_app";
 
@@ -38,10 +38,10 @@ const Home: NextPageWithLayout = () => {
         <Socials />
       </div>
       <Image
-        src={diveImg}
-        alt=""
-        width={150}
+        src={img}
+        alt="Me at work"
         height={150}
+        width={150}
         className="rounded-xl mt-12"
       />
       <div className="mt-12">

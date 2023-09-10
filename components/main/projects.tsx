@@ -5,10 +5,10 @@ export function Projects() {
   return (
     <section
       id="Projects"
-      className="flex flex-col items-center justify-center"
+      className="flex flex-col items-center justify-center w-full px-8"
     >
       <h1 className="text-4xl font-bold">Projects</h1>
-      <div className="grid grid-cols-2">
+      <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
         <ProjectCard
           title="Realty Hub"
           description="Find some articles on real estate as well as an in depth calculator

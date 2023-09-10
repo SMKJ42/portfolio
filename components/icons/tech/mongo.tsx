@@ -9,11 +9,11 @@ export function Mongo() {
         xmlns="http://www.w3.org/2000/svg"
         fill="#000000"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
         <g
           id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         ></g>
         <g id="SVGRepo_iconCarrier">
           <defs>
@@ -26,15 +26,15 @@ export function Mongo() {
               gradientTransform="matrix(-0.977, -0.323, -0.29, 0.877, -375.944, -928.287)"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0.231" stop-color="#999875"></stop>
-              <stop offset="0.563" stop-color="#9b9977"></stop>
-              <stop offset="0.683" stop-color="#a09f7e"></stop>
-              <stop offset="0.768" stop-color="#a9a889"></stop>
-              <stop offset="0.837" stop-color="#b7b69a"></stop>
-              <stop offset="0.896" stop-color="#c9c7b0"></stop>
-              <stop offset="0.948" stop-color="#deddcb"></stop>
-              <stop offset="0.994" stop-color="#f8f6eb"></stop>
-              <stop offset="1" stop-color="#fbf9ef"></stop>
+              <stop offset="0.231" stopColor="#999875"></stop>
+              <stop offset="0.563" stopColor="#9b9977"></stop>
+              <stop offset="0.683" stopColor="#a09f7e"></stop>
+              <stop offset="0.768" stopColor="#a9a889"></stop>
+              <stop offset="0.837" stopColor="#b7b69a"></stop>
+              <stop offset="0.896" stopColor="#c9c7b0"></stop>
+              <stop offset="0.948" stopColor="#deddcb"></stop>
+              <stop offset="0.994" stopColor="#f8f6eb"></stop>
+              <stop offset="1" stopColor="#fbf9ef"></stop>
             </linearGradient>
             <linearGradient
               id="b"
@@ -45,8 +45,8 @@ export function Mongo() {
               gradientTransform="matrix(-0.977, -0.323, -0.29, 0.877, -375.944, -928.287)"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stop-color="#48a547"></stop>
-              <stop offset="1" stop-color="#3f9143"></stop>
+              <stop offset="0" stopColor="#48a547"></stop>
+              <stop offset="1" stopColor="#3f9143"></stop>
             </linearGradient>
             <linearGradient
               id="c"
@@ -57,10 +57,10 @@ export function Mongo() {
               gradientTransform="matrix(-0.977, -0.323, -0.29, 0.877, -375.944, -928.287)"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stop-color="#41a247"></stop>
-              <stop offset="0.352" stop-color="#4ba74b"></stop>
-              <stop offset="0.956" stop-color="#67b554"></stop>
-              <stop offset="1" stop-color="#69b655"></stop>
+              <stop offset="0" stopColor="#41a247"></stop>
+              <stop offset="0.352" stopColor="#4ba74b"></stop>
+              <stop offset="0.956" stopColor="#67b554"></stop>
+              <stop offset="1" stopColor="#69b655"></stop>
             </linearGradient>
           </defs>
           <title>file_type_mongo</title>
