@@ -40,7 +40,6 @@ const Home: NextPageWithLayout = () => {
       <Image
         src={img}
         alt="Me at work"
-        height={150}
         width={150}
         className="rounded-xl mt-12"
       />
