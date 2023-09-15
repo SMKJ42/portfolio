@@ -7,7 +7,7 @@ import { About } from "@/components/main/about";
 import { Experience } from "@/components/main/experience";
 import { Projects } from "@/components/main/projects";
 
-import * as img from "/public/diving.jpg";
+import * as img from "../public/diving.jpg";
 import { Layout } from "@/components/Layout";
 import { AppContext, NextPageWithLayout } from "./_app";
 
