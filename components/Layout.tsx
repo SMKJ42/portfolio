@@ -2,8 +2,6 @@ import { Inter } from "next/font/google";
 import { ThemeIcons } from "./icons/ToggleTheme";
 import { Hamburger } from "./icons/hamburger";
 import { Dispatch, SetStateAction, useState } from "react";
-import headers from "next/headers";
-import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +12,7 @@ export function Layout(Props: { children: React.ReactNode }) {
             <div
                 className={`min-h-screen ${inter.className} bg-slate-200 dark:bg-black text-black dark:text-white transition-colors duration-500`}
             >
-                <nav className="bg-teal-500 py-2 pl-8 pr-6 w-full text-white fixed z-10">
+                <nav className="bg-teal-700 py-2 pl-8 pr-6 w-full text-white fixed z-10">
                     <LargeNav />
                     <SmallNav />
                 </nav>

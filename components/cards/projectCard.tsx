@@ -36,6 +36,7 @@ export function ProjectCard(props: NoImage | WithImage) {
                         alt={alt || ""}
                         height={150}
                         width={200}
+                        quality={50}
                     />
                 </Link>
             )}
@@ -54,8 +55,10 @@ export function ProjectCard(props: NoImage | WithImage) {
                     More Details
                 </Link>
             </div>
-            <p className="text-xl font-semibold ml-6">Packages and Languages</p>
-            <ul className="grid grid-cols-2 sm:w-2/3 ml-6 my-2">
+            <p className="text-xl font-semibold md:ml-6">
+                Packages and Languages
+            </p>
+            <ul className="grid grid-cols-2 sm:w-2/3 md:ml-6 my-2">
                 {tech?.map((t) => (
                     <li key={t} className="my-px">
                         {t}

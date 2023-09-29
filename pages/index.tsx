@@ -7,8 +7,8 @@ import { Experience } from "@/components/main/experience";
 import { Projects } from "@/components/main/projects";
 import { Layout } from "@/components/Layout";
 import { AppContext, NextPageWithLayout } from "./_app";
-import { Contact } from "@/components/main/contact";
 import Head from "next/head";
+import { Contact } from "@/components/main/contact";
 
 const Home: NextPageWithLayout = () => {
     const { dispatch } = useContext(AppContext);
@@ -44,6 +44,7 @@ const Home: NextPageWithLayout = () => {
                     alt="LinkedIn profile image"
                     className="rounded-full object-cover"
                     priority={true}
+                    quality={75}
                     sizes="(max-width: 640px) 100px, (max-width: 768px) 200px, 300px"
                 />
             </div>
@@ -53,18 +54,15 @@ const Home: NextPageWithLayout = () => {
             <div className="mt-12">
                 <Socials />
             </div>
-            {/* <div className="w-[200px] h-[300px]"> */}
             <Image
                 src="/diving.JPG"
                 alt="Me at work"
-                // layout="responsive"
-                // fill={true}
                 height={200}
                 width={200}
+                quality={50}
                 priority={true}
                 className="rounded-xl mt-12"
             />
-            {/* </div> */}
             <div className="mt-12">
                 <Experience />
             </div>
