@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import Image from "next/image";
 
 import { Socials } from "@/components/main/socials";
@@ -7,6 +7,8 @@ import { Experience } from "@/components/main/experience";
 import { Projects } from "@/components/main/projects";
 import { Layout } from "@/components/Layout";
 import { AppContext, NextPageWithLayout } from "./_app";
+import { Contact } from "@/components/main/contact";
+import Head from "next/head";
 
 const Home: NextPageWithLayout = () => {
     const { dispatch } = useContext(AppContext);
@@ -25,6 +27,13 @@ const Home: NextPageWithLayout = () => {
 
     return (
         <>
+            <Head>
+                <title>William&apos;s Protfolio</title>
+                <meta
+                    name="description"
+                    content="A place for William Deason to showcase his talents and work."
+                />
+            </Head>
             <div className="hidden sm:flex w-full justify-center text-2xl mb-4 font-bold">
                 <h2>William Deason</h2>
             </div>
@@ -34,7 +43,8 @@ const Home: NextPageWithLayout = () => {
                     fill={true}
                     alt="LinkedIn profile image"
                     className="rounded-full object-cover"
-                    loading="eager"
+                    priority={true}
+                    sizes="(max-width: 640px) 100px, (max-width: 768px) 200px, 300px"
                 />
             </div>
             <div className="mt-8">
@@ -43,23 +53,27 @@ const Home: NextPageWithLayout = () => {
             <div className="mt-12">
                 <Socials />
             </div>
+            {/* <div className="w-[200px] h-[300px]"> */}
             <Image
                 src="/diving.JPG"
                 alt="Me at work"
+                // layout="responsive"
+                // fill={true}
+                height={200}
                 width={200}
-                height={100}
+                priority={true}
                 className="rounded-xl mt-12"
-                loading="lazy"
             />
+            {/* </div> */}
             <div className="mt-12">
                 <Experience />
             </div>
             <div className="mt-12">
                 <Projects />
             </div>
-            {/* <div className="mt-8">
-        <Contact />
-      </div> */}
+            <div className="mt-8 w-full flex justify-center">
+                <Contact />
+            </div>
         </>
     );
 };

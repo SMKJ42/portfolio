@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import { ThemeIcons } from "./themeIcon";
+import { ThemeIcons } from "./icons/ToggleTheme";
 import { Hamburger } from "./icons/hamburger";
 import { Dispatch, SetStateAction, useState } from "react";
 
@@ -38,9 +38,14 @@ function LargeNav() {
             <li className="hover:underline">
                 <a href="#Get_In_Touch">Get in Touch</a>
             </li>
-            <button className="hover:bg-teal-300 p-2 rounded-xl">
-                <ThemeIcons />
-            </button>
+            <li>
+                <button
+                    className="hover:bg-teal-300 p-2 rounded-xl"
+                    aria-label="toggle theme"
+                >
+                    <ThemeIcons />
+                </button>
+            </li>
         </ul>
     );
 }
