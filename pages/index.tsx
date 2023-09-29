@@ -5,9 +5,6 @@ import { Socials } from "@/components/main/socials";
 import { About } from "@/components/main/about";
 import { Experience } from "@/components/main/experience";
 import { Projects } from "@/components/main/projects";
-
-import * as img from "../public/diving.jpg";
-import * as me from "../public/liam-deason.jpg";
 import { Layout } from "@/components/Layout";
 import { AppContext, NextPageWithLayout } from "./_app";
 
@@ -33,9 +30,7 @@ const Home: NextPageWithLayout = () => {
             </div>
             <div className="h-52 w-52 relative">
                 <Image
-                    src={me || ""}
-                    // height={100}
-                    // width={150}
+                    src="/liam-deason.JPG"
                     fill={true}
                     alt="LinkedIn profile image"
                     className="rounded-full object-cover"
@@ -48,9 +43,10 @@ const Home: NextPageWithLayout = () => {
                 <Socials />
             </div>
             <Image
-                src={img}
+                src="/diving.JPG"
                 alt="Me at work"
-                width={150}
+                width={200}
+                height={100}
                 className="rounded-xl mt-12"
             />
             <div className="mt-12">
