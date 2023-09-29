@@ -28,12 +28,13 @@ const Home: NextPageWithLayout = () => {
             <div className="hidden sm:flex w-full justify-center text-2xl mb-4 font-bold">
                 <h2>William Deason</h2>
             </div>
-            <div className="h-52 w-52 relative">
+            <div className="h-52 w-52 relative items-center flex">
                 <Image
-                    src="/liam-deason.JPG"
+                    src="/liam_deason.JPG"
                     fill={true}
                     alt="LinkedIn profile image"
                     className="rounded-full object-cover"
+                    loading="eager"
                 />
             </div>
             <div className="mt-8">
@@ -48,6 +49,7 @@ const Home: NextPageWithLayout = () => {
                 width={200}
                 height={100}
                 className="rounded-xl mt-12"
+                loading="lazy"
             />
             <div className="mt-12">
                 <Experience />
