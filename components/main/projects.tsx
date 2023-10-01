@@ -23,7 +23,7 @@ export function Projects() {
                     href="/realty-hub"
                     title="Realty Hub"
                     description="I am extremely passionate about enabling people to make smart financial decisions.
-          This tool provides a calculator to examine key metrics of a rental property, as well as some articles to broaden their overall knowledge."
+                    This tool provides a calculator to examine key metrics of a rental property, as well as some articles to broaden their overall knowledge."
                     tech={[
                         "React",
                         "TypeScript",

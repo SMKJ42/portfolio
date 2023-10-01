@@ -1,7 +1,5 @@
 import React, { FormEvent, Suspense, useRef, useState } from "react";
-import type CAPTCHA from "react-google-recaptcha";
-
-const ReCAPTCHA = React.lazy(() => import("react-google-recaptcha"));
+import ReCAPTCHA from "react-google-recaptcha";
 
 export function Contact() {
     const [name, setName] = useState("");
@@ -9,7 +7,7 @@ export function Contact() {
     const [message, setMessage] = useState("");
     const fake_field = useRef("");
 
-    const recaptchaRef = React.createRef<CAPTCHA>();
+    const recaptchaRef = React.createRef<ReCAPTCHA>();
 
     function handleSubmit(e: FormEvent<HTMLButtonElement>) {
         const recaptchaValue = recaptchaRef.current?.getValue();
@@ -73,19 +71,17 @@ export function Contact() {
                 />
             </div>
             <div className="flex flex-col items-center">
-                <Suspense fallback={<div>Loading Captcha...</div>}>
-                    <ReCAPTCHA
-                        ref={recaptchaRef}
-                        sitekey={`6LeqRGMoAAAAAHFRsN3PPQLKE1taiGL-_iEJDvCl`}
-                    />
-                    <button
-                        type="submit"
-                        onClick={handleSubmit}
-                        aria-label="Submit Contact Form"
-                    >
-                        Submit
-                    </button>
-                </Suspense>
+                <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey={`6LeqRGMoAAAAAHFRsN3PPQLKE1taiGL-_iEJDvCl`}
+                />
+                <button
+                    type="submit"
+                    onClick={handleSubmit}
+                    aria-label="Submit Contact Form"
+                >
+                    Submit
+                </button>
             </div>
         </form>
     );

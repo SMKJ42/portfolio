@@ -54,6 +54,7 @@ const Home: NextPageWithLayout = () => {
             <div className="mt-12">
                 <Socials />
             </div>
+            {/* <div className="w-[200px] h-[300px]"> */}
             <Image
                 src="/diving.JPG"
                 alt="Me at work"
@@ -63,6 +64,7 @@ const Home: NextPageWithLayout = () => {
                 priority={true}
                 className="rounded-xl mt-12"
             />
+            {/* </div> */}
             <div className="mt-12">
                 <Experience />
             </div>
