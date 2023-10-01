@@ -1,4 +1,5 @@
-import React, { FormEvent, Suspense, useRef, useState } from "react";
+import { api } from "@/utils/api";
+import React, { FormEvent, useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export function Contact() {
@@ -9,6 +10,8 @@ export function Contact() {
 
     const recaptchaRef = React.createRef<ReCAPTCHA>();
 
+    const { mutate } = api.contact.createContact.useMutation();
+
     function handleSubmit(e: FormEvent<HTMLButtonElement>) {
         const recaptchaValue = recaptchaRef.current?.getValue();
         e.preventDefault();
@@ -18,13 +21,23 @@ export function Contact() {
             return;
         } else if (!!recaptchaValue) {
             //TODO: cache this in local storage, log the request on the server
+            mutate({
+                name,
+                email,
+                message,
+            });
             console.log(name, email, message);
         }
     }
 
+    // if (isSuccess) {
+    //     alert(
+    //         "Thanks for reaching out! I'll get back to you as soon as I can."
+    //     );
+    // }
+
     return (
         <form className="px-8 w-full md:w-1/2" id="get_in_touch">
-            <p>Note: sorry, this is not hooked up to backend yet!</p>
             <div className="md:flex">
                 <div className="w-full mr-4">
                     <label htmlFor="name">Name</label>
