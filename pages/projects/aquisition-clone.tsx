@@ -1,7 +1,12 @@
+import { Layout } from "@/components/Layout";
 import { NextPageWithLayout } from "../_app";
 
-const aquisition: NextPageWithLayout = () => {
-  return <h1>Coming soon...</h1>;
+const realtyHub: NextPageWithLayout = () => {
+    return <div className="w-full flex justify-center">Coming Soon...</div>;
 };
 
-export default aquisition;
+realtyHub.getLayout = (page) => {
+    return <Layout>{page}</Layout>;
+};
+
+export default realtyHub;

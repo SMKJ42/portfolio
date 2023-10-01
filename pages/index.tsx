@@ -34,7 +34,10 @@ const Home: NextPageWithLayout = () => {
                     content="A place for William Deason to showcase his talents and work."
                 />
             </Head>
-            <div className="hidden sm:flex w-full justify-center text-2xl mb-4 font-bold">
+            <div
+                className="hidden sm:flex w-full justify-center text-2xl mb-4 font-bold"
+                id="about_me"
+            >
                 <h2>William Deason</h2>
             </div>
             <div className="h-52 w-52 relative items-center flex">
@@ -54,6 +57,7 @@ const Home: NextPageWithLayout = () => {
             <div className="mt-12">
                 <Socials />
             </div>
+            {/* <div className="w-[200px] h-[300px]"> */}
             <Image
                 src="/diving.JPG"
                 alt="Me at work"
@@ -63,6 +67,7 @@ const Home: NextPageWithLayout = () => {
                 priority={true}
                 className="rounded-xl mt-12"
             />
+            {/* </div> */}
             <div className="mt-12">
                 <Experience />
             </div>

@@ -37,10 +37,11 @@ export function ProjectCard(props: NoImage | WithImage) {
                         height={150}
                         width={200}
                         quality={50}
+                        loading="lazy"
                     />
                 </Link>
             )}
-            <p className="italic md:w-2/3">{description}.. &nbsp;</p>
+            <p className="italic md:w-2/3 mt-2">{description}</p>
             <div className="flex w-full flex-wrap">
                 <Link
                     href={imgHref}
