@@ -23,7 +23,7 @@ export function Contact() {
     }
 
     return (
-        <form className="px-8 w-full md:w-1/2 ">
+        <form className="px-8 w-full md:w-1/2" id="get_in_touch">
             <p>Note: sorry, this is not hooked up to backend yet!</p>
             <div className="md:flex">
                 <div className="w-full mr-4">

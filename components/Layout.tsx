@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import { ThemeIcons } from "./icons/ToggleTheme";
 import { Hamburger } from "./icons/hamburger";
 import { Dispatch, SetStateAction, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,16 +31,16 @@ function LargeNav() {
     return (
         <ul className="hidden sm:flex items-center justify-between">
             <li className="hover:underline">
-                <a href="#About_Me">About Me</a>
+                <Link href="/#about_me">About Me</Link>
             </li>
             <li className="hover:underline">
-                <a href="#Experience">Experience</a>
+                <Link href="/#experience">Experience</Link>
             </li>
             <li className="hover:underline">
-                <a href="#Projects">Projects</a>
+                <Link href="/#projects">Projects</Link>
             </li>
             <li className="hover:underline">
-                <a href="#Get_In_Touch">Get in Touch</a>
+                <Link href="/#get_in_touch">Get in Touch</Link>
             </li>
             <li>
                 <button
@@ -95,21 +97,22 @@ function Collapsed(props: NavProps) {
 
 function Expanded(props: NavProps) {
     const { setIsExpanded } = props;
+    const router = useRouter();
 
     return (
         <>
             <ul className="w-full flex flex-col items-center">
                 <li className="hover:underline">
-                    <a href="#About_Me">About Me</a>
+                    <Link href="/#about_Me">About Me</Link>
                 </li>
                 <li className="hover:underline">
-                    <a href="#Experience">Experience</a>
+                    <Link href="/#experience">Experience</Link>
                 </li>
                 <li className="hover:underline">
-                    <a href="#Projects">Projects</a>
+                    <Link href="/#projects">Projects</Link>
                 </li>
                 <li className="hover:underline">
-                    <a href="#Get_In_Touch">Get in Touch</a>
+                    <Link href="/#get_in_touch">Get in Touch</Link>
                 </li>
             </ul>
             <div className="flex mt-1">

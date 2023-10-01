@@ -3,7 +3,7 @@ import { ProjectCard } from "../cards/projectCard";
 export function Projects() {
     return (
         <section
-            id="Projects"
+            id="projects"
             className="flex flex-col items-center justify-center w-full px-8"
         >
             <h1 className="text-4xl font-bold">Projects</h1>
