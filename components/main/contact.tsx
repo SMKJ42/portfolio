@@ -16,6 +16,8 @@ export function Contact() {
         const recaptchaValue = recaptchaRef.current?.getValue();
         e.preventDefault();
 
+        console.log(recaptchaValue);
+
         if (fake_field.current !== "") {
             //TODO: cache this in local storage, log the request on the server
             return;
@@ -25,6 +27,7 @@ export function Contact() {
                 name,
                 email,
                 message,
+                reCAPTCHA: recaptchaValue,
             });
             console.log(name, email, message);
         }

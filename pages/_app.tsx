@@ -5,6 +5,9 @@ import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { ReactElement, ReactNode, createContext } from "react";
 
+import * as React from "react";
+import * as ReactDom from "react-dom";
+
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
     getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -20,7 +23,7 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
 
     return (
         <AppContext.Provider value={AppStore()}>
-            {getLayout(<Component {...pageProps} />)}
+            {getLayout(<Component {...pageProps} />)}{" "}
         </AppContext.Provider>
     );
 }

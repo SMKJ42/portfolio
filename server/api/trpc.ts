@@ -31,11 +31,11 @@ import { prisma } from "../db";
  *
  * @see https://create.t3.gg/en/usage/trpc#-serverapitrpcts
  */
-const createInnerTRPCContext = () => {
-    return {
-        prisma,
-    };
-};
+// const createInnerTRPCContext = () => {
+//     return {
+//         prisma,
+//     };
+// };
 
 /**
  * This is the actual context you will use in your router. It will be used to process every request
@@ -46,7 +46,21 @@ const createInnerTRPCContext = () => {
 export const createTRPCContext = async (opts: CreateNextContextOptions) => {
     const { req, res } = opts;
 
-    return createInnerTRPCContext();
+    let ip = "";
+
+    if (req.headers?.["x-real-ip"]) {
+        ip = req.headers["x-real-ip"] as string;
+    } else if (req.headers?.["x-forwarded-for"]) {
+        const forwarded = req.headers["x-forwarded-for"] as string;
+        ip = forwarded.split(/\s*,\s*/)[0] as string;
+    } else {
+        ip = req.connection.remoteAddress as string;
+    }
+
+    return {
+        prisma,
+        ip,
+    };
 };
 
 /**
