@@ -12,9 +12,9 @@ export function Layout(Props: { children: React.ReactNode }) {
     return (
         <>
             <div
-                className={`min-h-screen ${inter.className} bg-slate-200 dark:bg-black text-black dark:text-white transition-colors duration-500`}
+                className={`min-h-screen ${inter.className} bg-slate-200 dark:bg-gray-900 text-black dark:text-white transition-colors duration-500`}
             >
-                <nav className="bg-teal-700 py-2 pl-8 pr-6 w-full text-white fixed z-10">
+                <nav className="bg-cyan-800 py-2 pl-8 pr-6 w-full text-white fixed z-10">
                     <LargeNav />
                     <SmallNav />
                 </nav>
