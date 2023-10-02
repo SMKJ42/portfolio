@@ -20,8 +20,6 @@ export function Contact() {
 
     const recaptchaRef = React.createRef<ReCAPTCHA>();
 
-    console.log(error);
-
     const { mutate } = api.contact.createContact.useMutation({
         onSuccess: () => {
             setSuccess(true);
@@ -66,11 +64,9 @@ export function Contact() {
         setSuccess(false);
     }
 
-    console.log(error);
-
     return (
         <form
-            className="px-8 py-4 rounded-xl border-gray-400 border w-full md:w-1/2 mx-8 flex flex-col"
+            className="px-8 py-4 rounded-xl border-gray-400 border w-full md:w-1/2 mx-8 flex flex-col bg-white dark:bg-black"
             id="get_in_touch"
             onSubmit={(e: any) => {
                 e.preventDefault();
