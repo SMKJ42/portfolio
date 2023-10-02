@@ -34,24 +34,7 @@ const Home: NextPageWithLayout = () => {
                     content="A place for William Deason to showcase his talents and work."
                 />
             </Head>
-            <div
-                className="hidden sm:flex w-full justify-center text-2xl mb-4 font-bold"
-                id="about_me"
-            >
-                <h2>William Deason</h2>
-            </div>
-            <div className="h-52 w-52 relative items-center flex">
-                <Image
-                    src="/liam_deason.JPG"
-                    fill={true}
-                    alt="LinkedIn profile image"
-                    className="rounded-full object-cover"
-                    priority={true}
-                    quality={75}
-                    sizes="(max-width: 640px) 100px, (max-width: 768px) 200px, 300px"
-                />
-            </div>
-            <div className="mt-8">
+            <div className="mt-4">
                 <About />
             </div>
             <div className="mt-12">

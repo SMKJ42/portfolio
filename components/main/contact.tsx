@@ -1,57 +1,99 @@
 import { api } from "@/utils/api";
 import React, { FormEvent, useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import ErrorMessage from "../alerts/errorMessage";
+import SuccessMessage from "../alerts/successMessage";
+
+interface FormErrorProps {
+    code: string | undefined;
+    minLen: number;
+    name: string;
+}
 
 export function Contact() {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    const name = useRef("");
+    const email = useRef("");
+    const message = useRef("");
     const fake_field = useRef("");
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState<boolean | FormErrorProps>(false);
 
     const recaptchaRef = React.createRef<ReCAPTCHA>();
 
-    const { mutate } = api.contact.createContact.useMutation();
+    console.log(error);
+
+    const { mutate } = api.contact.createContact.useMutation({
+        onSuccess: () => {
+            setSuccess(true);
+            setTimeout(() => {
+                setSuccess(false);
+            }, 2000);
+        },
+        onError: () => {
+            setError(true);
+        },
+    });
 
     function handleSubmit(e: FormEvent<HTMLButtonElement>) {
         const recaptchaValue = recaptchaRef.current?.getValue();
         e.preventDefault();
-
-        console.log(recaptchaValue);
 
         if (fake_field.current !== "") {
             //TODO: cache this in local storage, log the request on the server
             return;
         } else if (!!recaptchaValue) {
             //TODO: cache this in local storage, log the request on the server
-            mutate({
-                name,
-                email,
-                message,
+            const data = {
+                name: name.current,
+                email: email.current,
+                message: message.current,
                 reCAPTCHA: recaptchaValue,
+            };
+            mutate({
+                ...data,
             });
-            console.log(name, email, message);
+        } else {
+            alert("Please fill out the reCAPTCHA");
         }
     }
 
-    // if (isSuccess) {
-    //     alert(
-    //         "Thanks for reaching out! I'll get back to you as soon as I can."
-    //     );
-    // }
+    function closeError() {
+        setError(false);
+        console.log("hello");
+    }
+
+    function closeSuccess() {
+        setSuccess(false);
+    }
+
+    console.log(error);
 
     return (
-        <form className="px-8 w-full md:w-1/2" id="get_in_touch">
+        <form
+            className="px-8 py-4 rounded-xl border-gray-400 border w-full md:w-1/2 mx-8 flex flex-col"
+            id="get_in_touch"
+            onSubmit={(e: any) => {
+                e.preventDefault();
+                handleSubmit(e);
+            }}
+        >
+            {error && <ErrorMessage close={closeError} />}
+            {success && <SuccessMessage close={closeSuccess} />}
+            <h2 className="text-3xl font-semibold mb-4 w-full text-center">
+                Contact Me
+            </h2>
             <div className="md:flex">
                 <div className="w-full mr-4">
                     <label htmlFor="name">Name</label>
                     <br />
                     <input
-                        type="text"
                         className="w-full rounded dark:text-black"
                         id="name"
                         name="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        placeholder="John Doe"
+                        minLength={2}
+                        maxLength={50}
+                        onChange={(e) => (name.current = e.target.value)}
                     />
                 </div>
 
@@ -60,11 +102,14 @@ export function Contact() {
                     <br />
                     <input
                         type="email"
-                        className="w-full rounded dark:text-black"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        className="w-full rounded dark:text-black invalid:border-red-600 invalid:text-red-600"
+                        placeholder="example@email.com"
                         id="email"
                         name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        minLength={5}
+                        maxLength={50}
+                        onChange={(e) => (email.current = e.target.value)}
                     />
                 </div>
             </div>
@@ -73,10 +118,13 @@ export function Contact() {
                 <br />
                 <textarea
                     id="message"
-                    className="w-full rounded dark:text-black"
+                    className="w-full rounded dark:text-black h-32"
                     name="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    minLength={10}
+                    maxLength={500}
+                    placeholder="Hi Liam, I'd like to talk about..."
+                    onChange={(e) => (message.current = e.target.value)}
+                    required
                 />
             </div>
             <div className="hidden">
@@ -86,14 +134,14 @@ export function Contact() {
                     onChange={(e) => (fake_field.current = e.target.value)}
                 />
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center mt-4">
                 <ReCAPTCHA
                     ref={recaptchaRef}
                     sitekey={`6LeqRGMoAAAAAHFRsN3PPQLKE1taiGL-_iEJDvCl`}
                 />
                 <button
                     type="submit"
-                    onClick={handleSubmit}
+                    className="px-4 py-1 rounded-lg bg-cyan-800 text-white mt-4"
                     aria-label="Submit Contact Form"
                 >
                     Submit

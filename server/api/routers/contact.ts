@@ -7,10 +7,10 @@ export const contactRouter = createTRPCRouter({
     createContact: publicProcedure
         .input(
             z.object({
-                name: z.string(),
-                email: z.string().email(),
-                message: z.string(),
-                reCAPTCHA: z.string(),
+                name: z.string().min(2).max(50),
+                email: z.string().email().min(5).max(50),
+                message: z.string().min(10).max(500),
+                reCAPTCHA: z.string().min(50),
             })
         )
         .mutation(async ({ ctx, input }) => {
@@ -35,13 +35,17 @@ export const contactRouter = createTRPCRouter({
                 });
             }
 
-            return ctx.prisma.contact.create({
+            ctx.prisma.contact.create({
                 data: {
                     name,
                     email,
                     message,
                 },
             });
+
+            return {
+                success: true,
+            };
         }),
     clearContacts: publicProcedure
         .input(z.object({}))
