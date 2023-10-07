@@ -29,17 +29,20 @@ export function ProjectCard(props: NoImage | WithImage) {
     return (
         <div className="pl-4 py-4 border shadow-lg border-gray-300 rounded-xl h-fit bg-white dark:bg-black">
             {src && (
-                <Link href={imgHref} className="">
-                    <Image
-                        src={"/diving.JPG"}
-                        alt={alt || ""}
-                        height={150}
-                        width={200}
-                        quality={50}
-                        loading="lazy"
-                        className="rounded-md"
-                    />
-                </Link>
+                <div className="pr-4">
+                    <Link href={imgHref}>
+                        <div className="w-[280px] h-[140px] sm:w-[300px] sm:h-[180px] relative">
+                            <Image
+                                src={src}
+                                alt={alt || ""}
+                                fill={true}
+                                quality={50}
+                                loading="lazy"
+                                className="rounded-md "
+                            />
+                        </div>
+                    </Link>
+                </div>
             )}
             <div className="mx-4">
                 <h3 className="text-3xl font-bold mt-2">{title}</h3>

@@ -17,7 +17,7 @@ export function Projects() {
                     Full Stack
                 </h2>
                 <ProjectCard
-                    src="blob:https://localhost:3000"
+                    src="/Realty-hub.net.png"
                     imgHref="https://realty-hub.vercel.app"
                     alt="screen shot of Realty Hub"
                     href="/realty-hub"
@@ -36,7 +36,7 @@ export function Projects() {
                     ]}
                 />
                 <ProjectCard
-                    src="blob:https://localhost:3000"
+                    src="/diving.JPG"
                     imgHref="https://sweeping-cloud-staging.vercel.app"
                     alt="screen shot of Sweeping Cloud"
                     href="/sweeping-cloud"
@@ -60,7 +60,7 @@ export function Projects() {
                     Front End
                 </h2>
                 <ProjectCard
-                    src="blob:https://localhost:3000"
+                    src="/aquisition-clone.png"
                     imgHref="https://acquisition-clone-dev.vercel.app"
                     alt="screen shot of Aquisition Clone"
                     href="/aquisition-clone"
