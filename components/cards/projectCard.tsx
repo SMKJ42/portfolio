@@ -5,7 +5,7 @@ type NoImage = {
     title: string;
     description: string;
     tech: string[];
-    href: string;
+    href?: string;
 };
 
 interface WithImage extends NoImage {
@@ -54,12 +54,14 @@ export function ProjectCard(props: NoImage | WithImage) {
                     >
                         View Live
                     </Link>
-                    <Link
-                        href={`/projects${href}`}
-                        className=" px-4 py-2 rounded-lg bg-slate-500 text-white hover:underline whitespace-nowrap my-4"
-                    >
-                        More Details
-                    </Link>
+                    {href && (
+                        <Link
+                            href={`/projects${href}`}
+                            className=" px-4 py-2 rounded-lg bg-slate-500 text-white hover:underline whitespace-nowrap my-4"
+                        >
+                            More Details
+                        </Link>
+                    )}
                 </div>
                 <p className="text-xl font-semibold md:ml-6">
                     Packages and Languages

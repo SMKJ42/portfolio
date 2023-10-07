@@ -39,7 +39,7 @@ export function Projects() {
                     src="/diving.JPG"
                     imgHref="https://sweeping-cloud-staging.vercel.app"
                     alt="screen shot of Sweeping Cloud"
-                    href="/sweeping-cloud"
+                    // href="/sweeping-cloud"
                     title="Sweeping Cloud"
                     description="A place to manage bookings for cleaning companies. I have plans to
             build out a calendar, messenger, employee timesheets and many more
@@ -63,7 +63,7 @@ export function Projects() {
                     src="/aquisition-clone.png"
                     imgHref="https://acquisition-clone-dev.vercel.app"
                     alt="screen shot of Aquisition Clone"
-                    href="/aquisition-clone"
+                    // href="/aquisition-clone"
                     title="Aquisition Clone"
                     description="I spent some time listening to Alex's podcast and decided to
             check out his website. It's originally built with HubSpot and has
