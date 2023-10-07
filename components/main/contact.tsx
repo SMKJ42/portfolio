@@ -1,5 +1,5 @@
 import { api } from "@/utils/api";
-import React, { FormEvent, useRef, useState } from "react";
+import React, { FormEvent, useEffect, useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import ErrorMessage from "../alerts/errorMessage";
 import SuccessMessage from "../alerts/successMessage";
@@ -63,6 +63,10 @@ export function Contact() {
     function closeSuccess() {
         setSuccess(false);
     }
+
+    useEffect(() => {
+        console.log("test", recaptchaRef.current?.getValue());
+    }, [email, message, name]);
 
     return (
         <form

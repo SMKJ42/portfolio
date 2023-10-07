@@ -17,7 +17,7 @@ export function Projects() {
                     Full Stack
                 </h2>
                 <ProjectCard
-                    src="blob:https://localhost:3000"
+                    src="/Realty-hub.net.png"
                     imgHref="https://realty-hub.vercel.app"
                     alt="screen shot of Realty Hub"
                     href="/realty-hub"
@@ -36,10 +36,10 @@ export function Projects() {
                     ]}
                 />
                 <ProjectCard
-                    src="blob:https://localhost:3000"
+                    src="/diving.JPG"
                     imgHref="https://sweeping-cloud-staging.vercel.app"
                     alt="screen shot of Sweeping Cloud"
-                    href="/sweeping-cloud"
+                    // href="/sweeping-cloud"
                     title="Sweeping Cloud"
                     description="A place to manage bookings for cleaning companies. I have plans to
             build out a calendar, messenger, employee timesheets and many more
@@ -60,10 +60,10 @@ export function Projects() {
                     Front End
                 </h2>
                 <ProjectCard
-                    src="blob:https://localhost:3000"
+                    src="/aquisition-clone.png"
                     imgHref="https://acquisition-clone-dev.vercel.app"
                     alt="screen shot of Aquisition Clone"
-                    href="/aquisition-clone"
+                    // href="/aquisition-clone"
                     title="Aquisition Clone"
                     description="I spent some time listening to Alex's podcast and decided to
             check out his website. It's originally built with HubSpot and has
